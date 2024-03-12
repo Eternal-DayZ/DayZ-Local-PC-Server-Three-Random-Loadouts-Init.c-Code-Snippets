@@ -30,9 +30,6 @@ void main()
 	}
 }
 
-// AUTHOR: teaearlgraycold @ https://gist.github.com/teaearlgraycold/8c20f5c5582e84f7fd6c64a9a2247423 
-// Code Obtained from https://github.com/ravmustang/DayZ_SA_ClassName_Dump/blob/master/Everything%20DayZ/DayZ%20SA%20Community%20Scripting/PVPLoadout_init.c
-// Below code until end is the code that creates the three different random loadouts
 class CustomMission: MissionServer
 
 {
@@ -59,32 +56,111 @@ class CustomMission: MissionServer
 		player.SetQuickBarEntityShortcut(mag, 1, true);
 	}
 
-	EntityAI assaultClass(PlayerBase player)
+	EntityAI srsClass(PlayerBase player)
 	{
-		EntityAI gun = player.GetHumanInventory().CreateInHands("M4A1");
-		gun.GetInventory().CreateAttachment("M4_RISHndgrd_Black");
-		gun.GetInventory().CreateAttachment("M4_MPBttstck_Black");
-		gun.GetInventory().CreateAttachment("ACOGOptic");
-		addMags(player, "Mag_STANAG_30Rnd", 3);
-
+		EntityAI gun = player.GetHumanInventory().CreateInHands("Rev_SRSA2");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("Rev_Mag_SRSA2_10rnd");
+		addMags(player, "Rev_Mag_SRSA2_10rnd", 8);
 		return gun;
 	}
 
-	EntityAI sniperClass(PlayerBase player)
+	EntityAI dvlClass(PlayerBase player)
 	{
-		EntityAI gun = player.GetHumanInventory().CreateInHands("SVD");
-		gun.GetInventory().CreateAttachment("PSO1Optic");
-		addMags(player, "Mag_SVD_10Rnd", 3);
-
+		EntityAI gun = player.GetHumanInventory().CreateInHands("CPB_DVLSup_Black");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("CPB_DVL_Magazine");
+		addMags(player, "CPB_DVL_Magazine", 8);
 		return gun;
 	}
 
-	EntityAI smgClass(PlayerBase player)
+	EntityAI remiClass(PlayerBase player)
 	{
-		EntityAI gun = player.GetHumanInventory().CreateInHands("UMP45");
-		gun.GetInventory().CreateAttachment("PistolSuppressor");
-		addMags(player, "Mag_UMP_25Rnd", 3);
+		EntityAI gun = player.GetHumanInventory().CreateInHands("Rev_M2010_Blue");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("Rev_Mag_M2010_10rnd");
+		addMags(player, "Rev_Mag_M2010_10rnd", 8);
+		return gun;
+	}
 
+	EntityAI sakoClass(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("BO_SAKOTRG");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("BO_Mag_SAKOTRG_5rnd");
+		addMags(player, "BO_Mag_SAKOTRG_5rnd", 8);
+		return gun;
+	}
+
+	EntityAI deltaClass(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("BO_Delta5_Camo4");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("BO_Mag_Delta5_10rnd");
+		addMags(player, "BO_Mag_Delta5_10rnd", 8);
+		return gun;
+	}
+
+	EntityAI m200Class(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("Rev_M200");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("Rev_Mag_M200_7rnd");
+		addMags(player, "Rev_Mag_M200_7rnd", 8);
+		return gun;
+	}
+
+	EntityAI m300Class(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("BO_M300");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("BO_Mag_M300_7rnd");
+		addMags(player, "BO_Mag_M300_7rnd", 8);
+		return gun;
+	}
+
+	EntityAI msrClass(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("PITSTOP_MSR");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("PITSTOP_MSR_Magazine");
+		addMags(player, "PITSTOP_MSR_Magazine", 8);
+		return gun;
+	}
+
+	EntityAI m96Class(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("BO_M96");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("BO_Mag_M96_5rnd");
+		addMags(player, "BO_Mag_M96_5rnd", 8);
+		return gun;
+	}
+
+	EntityAI cdxClass(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("Rev_CDX50");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("Rev_Mag_CDX50_5rnd");
+		addMags(player, "Rev_Mag_CDX50_5rnd", 8);
+		return gun;
+	}
+
+	EntityAI axClass(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("SNAFUAX50_GUN");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("SNAFUAX50_Mag");
+		addMags(player, "SNAFUAX50_Mag", 8);
+		return gun;
+	}
+
+	EntityAI gatorClass(PlayerBase player)
+	{
+		EntityAI gun = player.GetHumanInventory().CreateInHands("SNAFUAlligator");
+		gun.GetInventory().CreateAttachment("HuntingOptic");
+		gun.GetInventory().CreateAttachment("SNAFUAlligator_5rndMag");
+		addMags(player, "SNAFUAlligator_5rndMag", 6);
 		return gun;
 	}
 
@@ -92,39 +168,53 @@ class CustomMission: MissionServer
 	{
 		player.RemoveAllItems();
 		
-		player.GetInventory().CreateInInventory("UKAssVest_Camo");
-		player.GetInventory().CreateInInventory("AssaultBag_Green");
-		player.GetInventory().CreateInInventory("TTSKOPants");
-		player.GetInventory().CreateInInventory("TTsKOJacket_Camo");
-		player.GetInventory().CreateInInventory("CombatBoots_Black");
-		player.GetInventory().CreateInInventory("BoonieHat_Flecktran");
-		player.GetInventory().CreateInInventory("TacticalGloves_Black");
-		player.GetInventory().CreateInInventory("SodaCan_Pipsi");
-		player.GetInventory().CreateInInventory("SodaCan_Pipsi");
-		player.GetInventory().CreateInInventory("SpaghettiCan");
-		player.GetInventory().CreateInInventory("TacticalBaconCan_Opened");
+		player.GetInventory().CreateInInventory("Mz_W_Hexgrid_Black");
+		player.GetInventory().CreateInInventory("EFT_bag_Kakashka");
+		player.GetInventory().CreateInInventory("MedicalScrubsShirt_White");
+		player.GetInventory().CreateInInventory("PITSTOP_SOCOMPants_Black");
+		player.GetInventory().CreateInInventory("PITSTOP2_SOCOMBelt_Black");
+		player.GetInventory().CreateInInventory("PITSTOP_AirForce_Black");
+		player.GetInventory().CreateInInventory("BalaclavaMask_Blackskull");
+		player.GetInventory().CreateInInventory("PITSTOP2_MechanixGloves_Black");
+		player.GetInventory().CreateInInventory("Black_CamoNetPoncho");
+		player.GetInventory().CreateInInventory("PITSTOP2_RysHelmet_Black");
 		player.GetInventory().CreateInInventory("HuntingKnife");
-		player.GetInventory().CreateInInventory("OrienteeringCompass");
-		player.GetInventory().CreateInInventory("TacticalBaconCan_Opened");
-		player.GetInventory().CreateInInventory("TetracyclineAntibiotics");
-		player.GetInventory().CreateInInventory("AntiChemInjector");
-		player.GetInventory().CreateInInventory("BandageDressing");
-		ItemBase rags = player.GetInventory().CreateInInventory("Rag");
-		rags.SetQuantity(4);
+		player.GetInventory().CreateInInventory("SalineBagIV");
+		player.GetInventory().CreateInInventory("SalineBagIV");
+		ItemBase bandage = player.GetInventory().CreateInInventory("BandageDressing");
+		ItemBase meds1 = player.GetInventory().CreateInInventory("SalineBagIV");
+		ItemBase meds2 = player.GetInventory().CreateInInventory("SalineBagIV");
+		ItemBase meds3 = player.GetInventory().CreateInInventory("SalineBagIV");
+		ItemBase meds4 = player.GetInventory().CreateInInventory("SalineBagIV");
+		ItemBase meds5 = player.GetInventory().CreateInInventory("SalineBagIV");
+		ItemBase meds6 = player.GetInventory().CreateInInventory("SalineBagIV");
 
 		EntityAI primary;
-		EntityAI axe = player.GetInventory().CreateInInventory("FirefighterAxe");
 
-		switch (Math.RandomInt(0, 3)) {
-			case 0: primary = assaultClass(player); break;
-			case 1: primary = sniperClass(player); break;
-			case 2: primary = smgClass(player); break;
+		switch (Math.RandomInt(0, 11)) {
+			case 0: primary = srsClass(player); break;
+			case 1: primary = dvlClass(player); break;
+			case 2: primary = remiClass(player); break;
+			case 3: primary = sakoClass(player); break;
+			case 4: primary = deltaClass(player); break;
+			case 5: primary = m200Class(player); break;
+			case 6: primary = m300Class(player); break;
+			case 7: primary = msrClass(player); break;
+			case 8: primary = m96Class(player); break;
+			case 9: primary = cdxClass(player); break;
+			case 10: primary = axClass(player); break;
+			case 11: primary = gatorClass(player); break;
 		}
 
 		player.LocalTakeEntityToHands(primary);
 		player.SetQuickBarEntityShortcut(primary, 0, true);
-		player.SetQuickBarEntityShortcut(rags, 2, true);
-		player.SetQuickBarEntityShortcut(axe, 3, true);
+		player.SetQuickBarEntityShortcut(bandage, 1, true);
+		player.SetQuickBarEntityShortcut(meds1, 2, true);
+		player.SetQuickBarEntityShortcut(meds2, 3, true);
+		player.SetQuickBarEntityShortcut(meds3, 4, true);
+		player.SetQuickBarEntityShortcut(meds4, 5, true);
+		player.SetQuickBarEntityShortcut(meds5, 6, true);
+		player.SetQuickBarEntityShortcut(meds6, 7, true);
 	}
 };
 
